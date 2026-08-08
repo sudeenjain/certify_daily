@@ -267,7 +267,48 @@ def build_workbook(rows):
     return DIGEST_XLSX
 
 
-def send_email(subject, body, attachment_path, errors):
+def update_google_sheet(rows, run_date):
+    """Append today's rows to a Google Sheet, creating the header if the
+    sheet is empty. Silently skips (with a log line) if credentials or
+    the sheet ID aren't configured - this feature is optional."""
+    sa_json = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON")
+    sheet_id = os.environ.get("GOOGLE_SHEET_ID")
+    if not sa_json or not sheet_id:
+        log.info("GOOGLE_SERVICE_ACCOUNT_JSON / GOOGLE_SHEET_ID not set - skipping Google Sheet update")
+        return
+
+    if not rows:
+        log.info("No new rows today - nothing to append to Google Sheet")
+        return
+
+    try:
+        import gspread
+        from google.oauth2.service_account import Credentials
+
+        scopes = ["https://www.googleapis.com/auth/spreadsheets"]
+        creds_info = json.loads(sa_json)
+        creds = Credentials.from_service_account_info(creds_info, scopes=scopes)
+        gc = gspread.authorize(creds)
+
+        sh = gc.open_by_key(sheet_id)
+        sheet_name = os.environ.get("GOOGLE_SHEET_TAB", "Certification Updates")
+        try:
+            ws = sh.worksheet(sheet_name)
+        except gspread.WorksheetNotFound:
+            ws = sh.add_worksheet(title=sheet_name, rows=1000, cols=len(COLUMNS) + 1)
+
+        existing = ws.get_all_values()
+        if not existing:
+            ws.append_row(["Date Found"] + COLUMNS, value_input_option="USER_ENTERED")
+
+        new_rows = [[run_date] + [row.get(col, "") for col in COLUMNS] for row in rows]
+        ws.append_rows(new_rows, value_input_option="USER_ENTERED")
+        log.info(f"Appended {len(new_rows)} row(s) to Google Sheet '{sheet_name}'")
+    except Exception as e:
+        log.warning(f"Google Sheet update failed: {e}")
+
+
+
     smtp_user = clean_env(os.environ.get("SMTP_USER"))
     smtp_pass = clean_env(os.environ.get("SMTP_PASS"))
     to_addr = clean_env(os.environ.get("TO_EMAIL")) or smtp_user
@@ -327,6 +368,7 @@ def main():
 
     rows = build_rows(results, api_key)
     xlsx_path = build_workbook(rows)
+    update_google_sheet(rows, run_date)
 
     errors = [r for r in results if r["result"].get("status") == "error"]
     body_lines = [
