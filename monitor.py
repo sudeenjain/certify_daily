@@ -24,8 +24,6 @@ import re
 import smtplib
 import sys
 import hashlib
-import logging
-import traceback
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
@@ -38,11 +36,8 @@ SOURCES_FILE = "sources.json"
 STATE_FILE = "state.json"
 REQUEST_TIMEOUT = 20
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (compatible; CertMonitorBot/1.0; +https://github.com/)",
+    "User-Agent": "Mozilla/5.0 (compatible; CertMonitorBot/1.0; +https://github.com/)"
 }
-
-# Configure logging early so we always get useful output in CI logs
-logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s: %(message)s")
 
 
 def load_json(path, default):
@@ -81,7 +76,6 @@ def check_rss(source):
             "published": latest.get("published", ""),
         }
     except Exception as e:
-        logging.exception("RSS check failed for %s", source.get("name"))
         return {"status": "error", "detail": str(e)}
 
 
@@ -100,7 +94,6 @@ def check_html(source, prev_hash):
             "first_check": first_check,
         }
     except Exception as e:
-        logging.exception("HTML check failed for %s", source.get("name"))
         return {"status": "error", "detail": str(e)}
 
 
@@ -151,14 +144,21 @@ def build_digest(results, run_date):
 
 
 def send_email(subject, body):
-    smtp_user = os.environ.get("SMTP_USER")
-    smtp_pass = os.environ.get("SMTP_PASS")
-    to_addr = os.environ.get("TO_EMAIL", smtp_user)
+    def clean(val):
+        if val is None:
+            return val
+        # Strip regular whitespace and non-breaking spaces (\xa0), which
+        # commonly get copied in from Google's app-password display page.
+        return val.replace("\xa0", "").replace(" ", "").strip()
 
-    # If SMTP creds aren't configured, print the digest so the workflow still
-    # surfaces the results instead of failing silently.
+    smtp_user = os.environ.get("SMTP_USER", "").strip() or None
+    smtp_pass = clean(os.environ.get("SMTP_PASS")) or None
+    to_addr = os.environ.get("TO_EMAIL", smtp_user)
+    if to_addr:
+        to_addr = to_addr.strip()
+
     if not smtp_user or not smtp_pass:
-        logging.warning("SMTP_USER / SMTP_PASS not set - skipping email send and printing digest")
+        print("SMTP_USER / SMTP_PASS not set - skipping email send, printing digest instead:\n")
         print(body)
         return
 
@@ -168,30 +168,23 @@ def send_email(subject, body):
     msg["Subject"] = subject
     msg.attach(MIMEText(body, "plain"))
 
-    try:
-        with smtplib.SMTP("smtp.gmail.com", 587) as server:
-            server.starttls()
-            server.login(smtp_user, smtp_pass)
-            server.sendmail(smtp_user, [to_addr], msg.as_string())
-        logging.info("Email sent to %s", to_addr)
-    except Exception:
-        # Don't let transient email issues cause the whole job to fail silently.
-        logging.exception("Failed to send email; printing digest instead")
-        print(body)
+    with smtplib.SMTP("smtp.gmail.com", 587) as server:
+        server.starttls()
+        server.login(smtp_user, smtp_pass)
+        server.sendmail(smtp_user, [to_addr], msg.as_string())
+    print(f"Email sent to {to_addr}")
 
 
 def main():
-    logging.info("Starting monitor run")
     sources = load_json(SOURCES_FILE, [])
     state = load_json(STATE_FILE, {})
     run_date = datetime.now().strftime("%Y-%m-%d %H:%M")
 
     results = []
     for source in sources:
-        name = source.get("name")
-        stype = source.get("type")
-        url = source.get("url")
-        logging.info("Checking: %s (%s)...", name, stype)
+        name = source["name"]
+        stype = source["type"]
+        print(f"Checking: {name} ({stype})...")
 
         if stype == "rss":
             res = check_rss(source)
@@ -201,26 +194,14 @@ def main():
             if res.get("status") == "ok":
                 state[name] = {"hash": res["hash"], "last_checked": run_date}
 
-        results.append({"name": name, "url": url, "type": stype, "result": res})
+        results.append({"name": name, "url": source["url"], "type": stype, "result": res})
 
-    try:
-        save_json(STATE_FILE, state)
-    except Exception:
-        logging.exception("Failed to save state to %s", STATE_FILE)
+    save_json(STATE_FILE, state)
 
     digest = build_digest(results, run_date)
     subject = f"Daily Certification Update Digest - {datetime.now().strftime('%d %b %Y')}"
     send_email(subject, digest)
-    logging.info("Monitor run complete")
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except Exception:
-        logging.exception("Unhandled exception in monitor.py")
-        traceback.print_exc()
-        # Exit non-zero so CI shows failure when there's a real bug.
-        sys.exit(1)
-    else:
-        sys.exit(0)
+    main()
