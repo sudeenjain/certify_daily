@@ -1,67 +1,67 @@
 {
   "Microsoft Learn": {
     "hash": "51d617cd745ee428b10c8112b80e5c09ff92fcd6d211d69997eae1bcdf928f83",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Google Developers": {
-    "hash": "705ee6019910e25a53a8380de4621c9ef6c56c81993643715328aa37d7e0d15b",
-    "last_checked": "2026-11-17 21:51"
+    "hash": "5d1b61d81394ca604314da422c7da755f51b7b820e5dc74a7a208f82e0432494",
+    "last_checked": "2026-11-18 21:30"
   },
   "Meta Blueprint": {
     "hash": "d9368e81ce0cf12661f623beb168c94d527d8c34f2dc336e9a70401e41f8ddb3",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "NVIDIA Deep Learning Institute": {
     "hash": "e0bb272da939842dba0095e2d8151ef190cbbd632148f32713e7c8477460c02b",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Databricks Academy": {
     "hash": "81fe5c517ba500d17a29b64e569765c0a6922dd06e5c4d796da31fc4115ce8ea",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "MongoDB University": {
     "hash": "bd97b89686d0f9bb14715a0035ac1801a916c2eaf1c5b1bed3eaf82800f4c98f",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Red Hat": {
     "hash": "be3c3df69f236e8ca4dfb8b0135f1c8ac57c6b87a093b135c79f62c456097ac9",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Linux Foundation": {
-    "hash": "ed217fcbd591b7dc7d4315d1069fa79fa859f82cfe89c1a576690e5f49219ba8",
-    "last_checked": "2026-11-17 21:51"
+    "hash": "c29319ca85f98f023c81c854db0e94a13edf8e8f16579cd071eb0d61a99ff3ba",
+    "last_checked": "2026-11-18 21:30"
   },
   "SAP Learning": {
     "hash": "18cd42f32775b5ab0c4de3568a17a86c2e7ee07ea9ebd4dab44a215b6617f262",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "UiPath Academy": {
     "hash": "4d1e895fb4708d772fb11328c97437f739063dfcde5837d35cfbdfc3dfac54d3",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Intel": {
     "hash": "9ad7151b966fe1b7701b61ba1bfc96dc31a327ca54ddf7f4acc491809ccb85c6",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Fortinet Training Institute": {
     "hash": "5d32e672e3feffec5e3256bfc2f85c83d0741cb6c6bc429324fbd4fc33d9c055",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Palo Alto Networks": {
     "hash": "3c181b9cf51d4e59a95671561813b6d509dd260916532a09671e8adfaa0f0ed8",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Check Point": {
     "hash": "43a5bee6576dd1138ee57150ce473dd47e56bc2f01d4368ca8e3e905394f87b0",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Splunk Education": {
     "hash": "9f0965bc9ced22e50c80c1d987794d174e5bb737a7e49956ca0cf3bf3c37e4cd",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Elastic Training": {
     "hash": "4e01d83c0a1e6b33fb8f3ef28ae2311bd231da3ae481c4f15d843cf2169a63ca",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Cloudflare Learning": {
     "hash": "ec030309acc7bc4f56997f346a9ec799e645d4e9d5d029a2de1c90382c94f7d9",
@@ -69,23 +69,23 @@
   },
   "Atlassian University": {
     "hash": "a1a7a7a787a45138f1c5cd050df4d563ed8a75c6478fa731a18ade9a12ccf361",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "HubSpot Academy": {
     "hash": "cdc992d6a27d9dc7aa37fa1744e4f2a4685278595915e9ec067662b54ca8dd61",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Semrush Academy": {
     "hash": "7d7bc6f60437b1278c10dfd07c339c68c007fef0a7470ffa49b66806d9329cd1",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Google Skillshop": {
     "hash": "fb6fa3408cadd6ce1130f079eefcbd87120c6cf32614deb7061f8b69c0182923",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "MathWorks": {
     "hash": "4e915c0baaa369c83bd577cc1ed343a55275634ae5f822cf86f2c69153143648",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Ansys Innovation Courses": {
     "hash": "c2ac37c12f2146c611213ebbd3e28ef585ec4ab070e068a3eb6ed8ebd64a15a6",
@@ -93,98 +93,98 @@
   },
   "Bentley Education": {
     "hash": "231a0087a7390d080b1e46e66edad1825a9e7265fe8b3742b404596c1a8ec004",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Cisco Skills for All": {
     "hash": "7bffa016d3131847f92ecfbed90eadafa009582d6e52fe5d7e1a5ab5896fdeeb",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Juniper Open Learning": {
     "hash": "f039c947699c3a84266c42a7d8a277ed732c149e58cdbf73b8bcc20b915090ed",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Kubernetes / CNCF": {
     "hash": "307c960d511de176e33c92fd398b99bf7c8c3568f49c7338a90a6f36aa5d7d26",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "GitLab Learn": {
     "hash": "616efc833e475db1bccbd4b222869ebb6453f19ee621b7d2dbad857584fba0e4",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Postman Academy": {
     "hash": "b8a6a313f9d02f5701637b5c1cc2428f4075bc268a9a9fcb352933abf9d380b4",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "HackerRank": {
     "hash": "8a19964672ace1ce6216c546f86e19711269eff208d39fedf48d8dd4e801fc0f",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Kaggle Learn": {
     "hash": "40def2c5b9fa8754b8cf4d0f041cfcb9cd9bbdcad0ae8a33306597854e1278f6",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "DataCamp": {
     "hash": "028cb856de7e370350af11e1214e9450316627c6a08503f8e69ad8173b3b25e6",
     "last_checked": "2026-11-07 18:11"
   },
   "Simplilearn SkillUp": {
-    "hash": "ca2f7308f47e9de53f2916f34bd2632037a82164de511bc48030bd503e7f8f0a",
-    "last_checked": "2026-11-17 21:51"
+    "hash": "54c920031500193f66a381412cfb2c1da9b817d9e6a9a88ff2cc2de41aa3b6f8",
+    "last_checked": "2026-11-18 21:30"
   },
   "Great Learning Academy": {
-    "hash": "54bca89122a1c4719dc2e5219afb04a7b8762c06f681012934bf0d40e126134d",
-    "last_checked": "2026-11-17 21:51"
+    "hash": "dcf84f1d9a589fc55da8ea19d96907b74c552b8b6df87b9e8f863ee6b56dcf87",
+    "last_checked": "2026-11-18 21:30"
   },
   "Infosys Springboard": {
     "hash": "9bcdd128522b248e6172135f06a854e5857d82ea725d9b2bc87a31ff4648a51e",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Wipro TalentNext": {
     "hash": "57959437186a383fab9dda7e3cea2e5cbcec19d62d4d915aff9aae2248494153",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Forage": {
     "hash": "41e1b3afe4461f80c5a9442fe633251c81ac6d21533dd80ec3b890dd4983eaa1",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "JPMorgan Chase (Forage)": {
     "hash": "41134e804651829e823b064626cecec9b9a7cb9c3b1be92c967c6c0485409f84",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Goldman Sachs (Forage)": {
     "hash": "41134e804651829e823b064626cecec9b9a7cb9c3b1be92c967c6c0485409f84",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Deloitte (Forage)": {
     "hash": "41134e804651829e823b064626cecec9b9a7cb9c3b1be92c967c6c0485409f84",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Tata Group (Forage)": {
     "hash": "41134e804651829e823b064626cecec9b9a7cb9c3b1be92c967c6c0485409f84",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "PwC (Forage)": {
     "hash": "41134e804651829e823b064626cecec9b9a7cb9c3b1be92c967c6c0485409f84",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Snowflake": {
     "hash": "ea27cf7544ada06198ae959d73167d2b0b8724d7a3aebabb66d1317a0c560b0f",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "Automation Anywhere University": {
-    "hash": "504145d3d9d14d57868641a2fc79949f2d191dfae429d983fd429aa8d0582568",
-    "last_checked": "2026-11-17 21:51"
+    "hash": "713e963da5914cff49c958959ae14dfc91daa12e76ac1247a85a8491af6aa5bf",
+    "last_checked": "2026-11-18 21:30"
   },
   "HP LIFE": {
-    "hash": "199cdf6970d4a3839bc02dd9ee648a15fb7f529d07599f87aceafb52e10b9850",
-    "last_checked": "2026-11-17 21:51"
+    "hash": "bafe439eebdb7737e5c2ad6a14ace0e48a32cfcab4ec4d52d54275299f727183",
+    "last_checked": "2026-11-18 21:30"
   },
   "VMware Learning (Broadcom)": {
     "hash": "8868538f988c5cc6892c5da0e3a45ee96c9fd987c144d4715dd072904b1bb1cc",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   },
   "TCS iON": {
     "hash": "b5a338907e29b1afdbeb7f9c315079b6dd6abc41b775917d5dc5dc4c1db99b05",
-    "last_checked": "2026-11-17 21:51"
+    "last_checked": "2026-11-18 21:30"
   }
 }
